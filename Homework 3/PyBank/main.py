@@ -1,90 +1,76 @@
-#First we will import os module that will allow us to create file path
 import os
 import csv
 
-py_bank = r"C:\Users\sobai\GWARL201906DATA1\02-Homework\03-Python\Instructions\PyBank\Resources\budget_data.csv"
+py_bank = r"C:\Users\sobai\Zewari_DataBootcamp_HW\Homework 3\PyBank\budget_data.csv"
 
+with open(py_bank, newline="") as budgetdata:
 
-with open(py_bank) as budgetdata:
-
-    reader = csv.reader(budgetdata, delimiter=',')
+    reader = csv.reader(budgetdata, delimiter=",")
+    #print(reader)  
+    next(reader)
     
-    print(reader)
+    months = []
+    values = []
+    totals = []
     
-    #for row in reader:
+    for row in reader:
+        month = row[0]
+        value = int(row[1])
+        months.append(month)
+        values.append(value)
         
-        #print(row) 
-     
-    total_months = list(reader)
-    row_count = len(total_months)
-    print(row_count)
-    
-    profit = row_count['Profit/Losses'].sum()
-    print(row_count)
-    
-    
-    
-    
-
-
-
-
-
-
-
-total_months = range(0,1)
+    total_months = len(months)
     print(total_months)
     
-          
-
+    total_profit = sum(values)
+    print(total_profit)
     
-total_months = len(py_bank)
-    print(total_months)
+    
+    avg_chg = total_profit/total_months
+    print(avg_chg)
+    
+    diffs = []
+    counter = 0
+    for value in values:
+        if counter == 0:
+            pass
+        else:
+            diff = value - values[counter - 1]
+            diffs.append(diff)
+        counter += 1
         
-month_total= list(reader)
-total_months = len(month_total)
-print(month_total)
-
-       
-  
-total_months = sum(0 for row in total_months)     
-    print(total_months)
-
-
-
-Total_Months=len(reader[0])
-    print("Total number of months is" + Total_Months)
-
-profit_losses=sum(row[1])
-   print("Net Profit/Losses are" + profit_losses)
-    
-ave_profloss= (profit_losses/months_total)
-   print ("The average profit/losses is =" + ave_profloss)
-    
-   list_ofPL=[]
-    for x in csvreader:
-        list_ofPL.append(row[1])
-        difference_PL = np.diff(list_ofPL)
-    
-        increases = difference_PL[difference_PL > 0]
-        print(increases)
-        print(increases.mean())
-    
-        print(increases.max())
-        print(increases.min())
-
-
-Total_Months = Data[0]
-count(0)
-print(Total_Months)
-
-   
-   
-           
-           
-    
+        print(min(diffs))
+        print(max(diffs))
+         
         
+        greatest_increase = ["", 0]
+        greatest_decrease = ["", 9999999999999999999999]
+    
+        if (avg_chg > greatest_increase[1]):
+            greatest_increase[0] = avg_chg
+            greatest_increase[1] = row["Date"]
+
+        if (avg_chg < greatest_decrease[1]):
+            greatest_decrease[0] = avg_chg
+            greatest_decrease[1] = row["Date"]
+ 
+            avg_chg.append(int(row["Profit/Losses"]))               
+                
+
     
 
+pybank_analysis = r"C:\Users\sobai\Zewari_DataBootcamp_HW\Homework 3\PyBank\Analysis.txt"
 
+with open(pybank_analysis, "w") as txt_file:
+    txt_file.write("Total Months: " + str(total_months))
+    txt_file.write("\n")
+    txt_file.write("Total Profit: " + "$" + str(total_profit))
+    txt_file.write("\n")
+    txt_file.write("Average Change: " + "$" + str(round(sum(avg_chg) / len(avg_chg),2)))
+    txt_file.write("\n")
+    txt_file.write("Greatest Increase: " + str(greatest_increase[0]) + " ($" + str(greatest_increase[1]) + ")") 
+    txt_file.write("\n")
+    txt_file.write("Greatest Decrease: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")")
 
+#
+#
