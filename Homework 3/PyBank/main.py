@@ -26,9 +26,11 @@ with open(py_bank, newline="") as budgetdata:
     print(total_profit)
     
     
-    avg_chg = total_profit/total_months
-    print(avg_chg)
+    #avg_chg = total_profit/total_months
+    #print(avg_chg)
     
+    
+
     diffs = []
     counter = 0
     for value in values:
@@ -39,38 +41,45 @@ with open(py_bank, newline="") as budgetdata:
             diffs.append(diff)
         counter += 1
         
-        print(min(diffs))
-        print(max(diffs))
+    avg_chg = sum(diffs)/len(diffs)
+    print(avg_chg)
+    print(min(diffs))
+    print(max(diffs))
          
         
-        greatest_increase = ["", 0]
-        greatest_decrease = ["", 9999999999999999999999]
-    
-        if (avg_chg > greatest_increase[1]):
-            greatest_increase[0] = avg_chg
-            greatest_increase[1] = row["Date"]
-
-        if (avg_chg < greatest_decrease[1]):
-            greatest_decrease[0] = avg_chg
-            greatest_decrease[1] = row["Date"]
- 
-            avg_chg.append(int(row["Profit/Losses"]))               
-                
+#        greatest_increase = ["", 0]
+#        greatest_decrease = ["", 9999999999999999999999]
+#    
+#        if (avg_chg > greatest_increase[1]):
+#            greatest_increase[0] = avg_chg
+#            greatest_increase[1] = row["Date"]
+#
+#        if (avg_chg < greatest_decrease[1]):
+#            greatest_decrease[0] = avg_chg
+#            greatest_decrease[1] = row["Date"]
+# 
+#            avg_chg.append(int(row["Profit/Losses"]))               
+#                
 
     
 
 pybank_analysis = r"C:\Users\sobai\Zewari_DataBootcamp_HW\Homework 3\PyBank\Analysis.txt"
 
 with open(pybank_analysis, "w") as txt_file:
-    txt_file.write("Total Months: " + str(total_months))
-    txt_file.write("\n")
-    txt_file.write("Total Profit: " + "$" + str(total_profit))
-    txt_file.write("\n")
-    txt_file.write("Average Change: " + "$" + str(round(sum(avg_chg) / len(avg_chg),2)))
-    txt_file.write("\n")
-    txt_file.write("Greatest Increase: " + str(greatest_increase[0]) + " ($" + str(greatest_increase[1]) + ")") 
-    txt_file.write("\n")
-    txt_file.write("Greatest Decrease: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")")
+    
+    text = (f"Total Months:{total_months}\n"
+            f"Total Profit:{total_profit}\n")
+    txt_file.write(text)
+    
+#    txt_file.write("Total Months: " + str(total_months))
+#    txt_file.write("\n")
+#    txt_file.write("Total Profit: " + "$" + str(total_profit))
+#    txt_file.write("\n")
+#    txt_file.write("Average Change: " + "$" + str(round(sum(avg_chg) / len(avg_chg),2)))
+#    txt_file.write("\n")
+#    txt_file.write("Greatest Increase: " + str(greatest_increase[0]) + " ($" + str(greatest_increase[1]) + ")") 
+#    txt_file.write("\n")
+#    txt_file.write("Greatest Decrease: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")")
 
 #
 #
