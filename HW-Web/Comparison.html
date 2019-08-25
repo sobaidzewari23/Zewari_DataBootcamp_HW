@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zewari HW HTML - WeatherPy Data</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Titillium+Web" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="active navbar-brand brand_color" href="Summary.html">Latitude</a>
+            </div>
+            <div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu drop_down_color">
+                                <li>
+                                    <a href="max_temp.html">Max Temperature</a>
+                                </li>
+                                <li>
+                                    <a href="humidity.html">Humidity</a>
+                                </li>
+                                <li>
+                                    <a href="cloudiness.html">Cloudiness</a>
+                                </li>
+                                <li>
+                                    <a href="wind_speed.html">Wind Speed</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="home">
+                            <a href="comparison.html">Comparison</a>
+                        </li>
+                        <li>
+                            <a href="data.html">Data</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--End "nav bar"-->
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="jumbotron">
+                <header>
+                    <h2>Comparison: Latitude vs. </h2>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <h3>vs. Temperature</h3>
+                            <a href="max_temp.html">
+                                    <a href="max_temp.html"><img src="Max_temp.png" class="img-responsive" alt="Latitude vs Temperature"></a>
+                                </a>
+
+
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <h3>vs. Humidity</h3>
+                            <a href="humidity.html">
+                                    <a href="humidity.html"><img src="Humidity.png" class="img-responsive" alt="Latitude vs Humnidity"></a>
+                                </a>
+
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <h3>vs. Cloudiness</h3>
+                            <a href="cloudiness.html">
+                                    <a href="cloudiness.html"><img src="Cloudiness.png" class="img-responsive" alt="Latitude vs Cloudiness"></a>
+                                </a>
+
+
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <h3>vs. Wind Speed</h3>
+                            <a href="wind_speed.html">
+                                    <a href="wind_speed.html"><img src="Wind Speed.png" class="img-responsive" alt="Latitude vs Wind Speed"></a>
+                                </a>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                </header>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</body>
+<!-- Footer-->
+<div class="container-fluid">
+    <footer style="background-color: lightblue">
+    </footer>
+</div>
+
+</html>
